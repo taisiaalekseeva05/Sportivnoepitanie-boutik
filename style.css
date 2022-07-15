@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    width: 440px;
+    margin: 0 auto;
+}
+
+.preview-cart {
+    width: 440px;
+    margin: 0 auto;
+}
+
+.product-el {
+    background-color: #555;
+    border-radius: 10px;
+    width: 200px;
+    height: 260px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.product-el img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.product-el h6 {
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.btn {
+    width: 100%;
+    /* height: 30px; */
+    padding: 10px 0;
+    background-color: rgb(29, 76, 90);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.btn-plus {
+    width: 30%;
+    background-color: rgb(29, 76, 90);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-minus {
+    width: 30%;
+    background-color: rgb(90, 38, 29);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-count {
+    width: 30%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.configurate-count {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}

@@ -11,128 +11,208 @@
 </head>
 
 <body>
-    <h1>Спортивное питание</h1>
-    <div class="product-gallery">
-        <div class="product-el">
-            <h4>Product 1</h4>
-            <img src="https://avatars.mds.yandex.net/get-altay/4234257/2a00000179487450016b940fced1ba953a30/XXL" alt="">
-            <h6>400 р.</h6>
-            <div class="configurate-count">
-                <div class="btn-minus">-</div>
-                <input type="text" class="input-count" value="0">
-                <div class="btn-plus">+</div>
-            </div>
-            <div class="btn add-to-cart">Добавить в корзину</div>
-        </div>
 
-        <div class="product-el">
-            <h4>Product 2</h4>
-            <img src="https://avatars.mds.yandex.net/get-altay/4398559/2a000001794873ec242980b0fa7b544fbc29/XXL" alt="">
-            <h6>700 р.</h6>
-            <div class="configurate-count">
-                <div class="btn-minus">-</div>
-                <input type="text" class="input-count" value="0">
-                <div class="btn-plus">+</div>
-            </div>
-            <div class="btn add-to-cart">Добавить в корзину</div>
-        </div>
-
-        <div class="product-el">
-            <h4>Product 3</h4>
-            <img src="https://irecommend.ru/sites/default/files/product-images/399872/xNCh5bUETlpQaKMV7HNMA.jpg" alt="">
-            <h6>500 р.</h6>
-            <div class="configurate-count">
-                <div class="btn-minus">-</div>
-                <input type="text" class="input-count" value="0">
-                <div class="btn-plus">+</div>
-            </div>
-            <div class="btn add-to-cart">Добавить в корзину</div>
-        </div>
-
-        <div class="product-el">
-            <h4>Product 4</h4>
-            <img src="https://irecommend.ru/sites/default/files/product-images/1520372/WyUyevA8P449RlzdG09Rmg.jpg" alt="">
-            <h6>400 р.</h6>
-            <div class="configurate-counter">
-                <div class="btn-minus" data-action="minus">-</div>
-                <div class="input-count" data-counter>0</div>
-                <!-- <input type="text" class="input-count" value="0"> -->
-                <div class="btn-plus" data-action="plus">+</div>
-            </div>
-            <!-- <div class="configurate-count">
-                <div class="btn-minus">-</div>
-                <input type="text" class="input-count" value="0">
-                <div class="btn-plus">+</div>
-            </div> -->
-            <div class="btn add-to-cart">Добавить в корзину</div>
-            <!-- <div class="btn add-to-cart"> -->
-
-        </div>
-    </div>
+    <div id="alert_info">
+        <p></p>
     </div>
 
-    <h1>Корзина</h1>
-    <div class="preview-cart">
-        <h2>У вас в корзине <b id="prev-count">0</b> товаров на сумму <b id="prev-price">0</b> рублей</h2>
-        <div class="btn">Перейти к оформлению заказа</div>
+    <h1 class="title-main">Спортивное питание</h1>
+
+    <div id="screen_1">
+        <h1>Список товаров</h1>
+
+        <!-- <button id="btn-test">Show/Hide Alert</button> -->
+
+        <div class="product-gallery">
+            <div class="product-el">
+                <h4>Product 1</h4>
+                <img src="https://avatars.mds.yandex.net/get-altay/4234257/2a00000179487450016b940fced1ba953a30/XXL" alt="">
+                <h6>400 ₽</h6>
+                <div class="configurate-count">
+                    <div class="btn-minus">-</div>
+                    <input type="text" class="input-count" value="0">
+                    <div class="btn-plus">+</div>
+                </div>
+                <div class="btn add-to-cart">Добавить в корзину</div>
+            </div>
+
+            <div class="product-el">
+                <h4>Product 2</h4>
+                <img src="https://avatars.mds.yandex.net/get-altay/4398559/2a000001794873ec242980b0fa7b544fbc29/XXL" alt="">
+                <h6>700 ₽</h6>
+                <div class="configurate-count">
+                    <div class="btn-minus">-</div>
+                    <input type="text" class="input-count" value="0">
+                    <div class="btn-plus">+</div>
+                </div>
+                <div class="btn add-to-cart">Добавить в корзину</div>
+            </div>
+
+            <div class="product-el">
+                <h4>Product 3</h4>
+                <img src="https://petimer.ru/upload/iblock/f01/f01c304a829027dc0343f767ee8f48ec.jpg" alt="">
+                <h6>500 ₽</h6>
+                <div class="configurate-count">
+                    <div class="btn-minus">-</div>
+                    <input type="text" class="input-count" value="0">
+                    <div class="btn-plus">+</div>
+                </div>
+                <div class="btn add-to-cart">Добавить в корзину</div>
+            </div>
+
+            <div class="product-el">
+                <h4>Product 4</h4>
+                <img src="https://gosport.shop/upload/goods_offer/e1a/e1a7860b89823bf273110970d109e529.jpg" alt="">
+                <h6>400 ₽</h6>
+                <div class="configurate-count">
+                    <div class="btn-minus">-</div>
+                    <input type="text" class="input-count" value="0">
+                    <div class="btn-plus">+</div>
+                </div>
+                <div class="btn add-to-cart">Добавить в корзину</div>
+                <!-- <div class="btn add-to-cart"> -->
+
+            </div>
+        </div>
+
+
+        <h1>Корзина</h1>
+        <div class="preview-cart">
+            <h2>У вас в корзине <b id="prev-count">0</b> товаров на сумму <b id="prev-price">0</b> рублей</h2>
+            <div class="btn" id="goto_screen_2">Перейти к оформлению заказа</div>
+        </div>
+    </div>
+
+    <div id="screen_2">
+        <h1>Оформление заказа</h1>
+        <div class="detail-pay">
+            <h3>ФИО</h3>
+            <input id="input_fio" type="text" placeholder="Иванов Иван Иванович">
+            <h3>Email</h3>
+            <input id="input_email" type="email" placeholder="test@mail.com">
+            <h3>Номер телефона</h3>
+            <input id="input_tel" type="tel" placeholder="+71234567890">
+            <h3>Адрес доставки</h3>
+            <input id="input_adress" type="text" placeholder="г. Сочи, ул. Чехова 20">
+            <div class="btn" id="goto_screen_1">Назад</div>
+            <div class="btn" id="goto_screen_3">Далее</div>
+
+        </div>
     </div>
 </body>
 
 </html>
 
 <script>
-    let cartObj = {}
+    // $("#btn-test").click(function(e) {
+    //     $("#alert_info").toggle()
 
+    // });
+
+
+
+    let cartObj = {}
+    let userObj = {
+        fio: "",
+        email: "",
+        tel_number: "",
+        adress: ""
+    }
+
+
+    // Add to Cart
     $(document).on("click", ".add-to-cart", function() {
         let nowItemName = $(this).parent().children("h4").text()
         let nowItemPrice = $(this).parent().children("h6").text()
 
-        nowItemPrice = nowItemPrice.replace(" р.", "")
-        nowItemPrice = Number(nowItemPrice)
+        let nowNum = $(this).parent().children(".configurate-count").children("input").val()
+        nowNum = Number(nowNum)
 
-        if (cartObj[nowItemName] == undefined) {
-            cartObj[nowItemName] = {
-                name: nowItemName,
-                price: nowItemPrice,
-                count: 1
-            }
+        // Ошибка при добавлении в корзину 
+        if (nowNum == 0) {
+            // console.log($("#alert_info").children("p").text())
+            $("#alert_info").children("p").text("Укажите минимум один товар для добавления в корзину")
+            $("#alert_info").show()
+
+            let hideInterval = setInterval(() => {
+                $("#alert_info").hide()
+                clearInterval(hideInterval)
+            }, 2000);
         } else {
-            cartObj[nowItemName]["count"] += 1
+
+
+            nowItemPrice = nowItemPrice.replace(" ₽", "")
+            nowItemPrice = Number(nowItemPrice)
+
+            if (cartObj[nowItemName] == undefined) {
+                cartObj[nowItemName] = {
+                    name: nowItemName,
+                    price: nowItemPrice,
+                    count: nowNum
+                }
+            } else {
+                cartObj[nowItemName]["count"] += 1
+            }
+
+            console.log(cartObj)
+
+            let countNow = 0
+            let sumPriceNow = 0
+
+            $.each(cartObj, function(indexInArray, valueOfElement) {
+                countNow += valueOfElement["count"]
+
+                sumPriceNow += (valueOfElement["count"] * valueOfElement["price"])
+            });
+
+            $("#prev-count").text(countNow)
+            $("#prev-price").text(sumPriceNow)
         }
+    });
+    // Btn PLUS
+    $(document).on("click", ".btn-plus", function() {
+        let nowNum = $(this).parent().children("input").val()
+        $(this).parent().children("input").val(Number(nowNum) + 1)
+    });
+    // Btn MINUS
+    $(document).on("click", ".btn-minus", function() {
+        let nowNum = $(this).parent().children("input").val()
+        if (Number(nowNum) != 0) {
+            $(this).parent().children("input").val(Number(nowNum) - 1)
+        }
+    });
 
-        console.log(cartObj)
 
-        let countNow = 0
-        let sumPriceNow = 0
+    $(document).on("click", "#goto_screen_2", function() {
+        let countInCart = Object.keys(cartObj).length
+        if (countInCart != 0) {
+            $("#screen_1").hide("slide")
+            $("#screen_2").show("slide")
+        } else {
+            $("#alert_info").children("p").text("Для перехода к оформлению добавьте минимум 1 товар в корзину")
+            $("#alert_info").show()
 
-        $.each(cartObj, function(indexInArray, valueOfElement) {
-            countNow += valueOfElement["count"]
-
-            sumPriceNow += (valueOfElement["count"] * valueOfElement["price"])
-        });
-
-        $("#prev-count").text(countNow)
-        $("#prev-price").text(sumPriceNow)
+            let hideInterval = setInterval(() => {
+                $("#alert_info").hide()
+                clearInterval(hideInterval)
+            }, 1000);
+        }
 
     });
 
-    window.addEventListener('click', function (event) {
-        let counter;
-        if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
-           const configurateCounter = event.target.closest('.configurate-counter');
-           counter = configurateCounter.querySelector('[data-counter]');
-        }
-        if (event.target.dataset.action === 'plus') {
-           counter.innerText = ++counter.innerText;
-        }
-        if (event.target.dataset.action === 'minus') {
-            if (parseInt(counter.innerText) > 1) {
-               counter.innerText = --counter.innerText;
-            } 
-        }
-    });        
+    $(document).on("click", "#goto_screen_1", function() {
+        $("#screen_2").hide("slide")
+        $("#screen_1").show("slide")
+    })
 
-    // $(document).on("click", ".btn-plus", function() {
+    $(document).on("click", "#goto_screen_3", function() {
+        userObj["fio"] = $("#input_fio").val()
+        userObj["email"] = $("#input_email").val()
+        userObj["tel_number"] = $("#input_tel").val()
+        userObj["adress"] = $("#input_adress").val()
 
-    // });
+        console.log(userObj)
+    })
+
+    
 </script>

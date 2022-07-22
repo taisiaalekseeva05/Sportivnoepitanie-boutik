@@ -86,17 +86,19 @@
     <div id="screen_2">
         <h1>Оформление заказа</h1>
         <div class="detail-pay">
-            <h3>ФИО</h3>
-            <input id="input_fio" type="text" placeholder="Иванов Иван Иванович">
-            <h3>Email</h3>
-            <input id="input_email" type="email" placeholder="test@mail.com">
-            <h3>Номер телефона</h3>
-            <input id="input_tel" type="tel" placeholder="+71234567890">
-            <h3>Адрес доставки</h3>
-            <input id="input_adress" type="text" placeholder="г. Сочи, ул. Чехова 20">
-            <div class="btn" id="goto_screen_1">Назад</div>
-            <div class="btn" id="goto_screen_3">Далее</div>
+            <form action="detail" onsubmit="return sendform ();">
+                <h3>ФИО</h3>
+                <input id="input_fio" type="text" placeholder="Иванов Иван Иванович">
+                <h3>Email</h3>
+                <input id="input_email" type="email" placeholder="test@mail.com">
+                <h3>Номер телефона</h3>
+                <input id="input_tel" type="tel" placeholder="+71234567890">
+                <h3>Адрес доставки</h3>
+                <input id="input_adress" type="text" placeholder="г. Сочи, ул. Чехова 20">
+                <div class="btn" id="goto_screen_1">Назад</div>
+                <div class="btn" id="goto_screen_3">Далее</div>
 
+            </form>
         </div>
     </div>
 </body>
@@ -213,6 +215,27 @@
 
         console.log(userObj)
     })
+    // массив полей для проверки 
+    required = now ["fio", "email","tel_number", "adress"]
+    // массив с текстом ошибки для конкретного поля
+    required_show= now ["Ваше имя", "Электронная почта","Номер телефона", "Адрес доставки"]
+
+    function sendform() {
+        let i, j
+        
+        for (j = 0; j < required.length; j++) {
+            for (i = 0; i< document.forms[0].length; i++) {
+                if(document.forms[0].elements[i].name ==required[j] && document.forms[0].elements[i].value == "") {
+                    alert('Пожалуйста, введите'+ required_show[j])
+                document.forms[0].elements[i].focus()
+                return false;   
+                }
+            }
+           
+            
+        }
+        return true;
+    }
 
     
 </script>

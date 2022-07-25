@@ -79,6 +79,7 @@ h4 {
     cursor: pointer;
     color: white;
     text-align: center;
+    margin-top: 10px;
 }
 
 .btn-plus {
@@ -152,9 +153,71 @@ h4 {
     border-radius: 10px;
     height: 38px;
     width: 100%;
-    padding: 0 10px;
 }
 
-#goto_screen_1 {
-    margin-bottom: 5px;
+.screen-3 {
+    margin: 0 auto;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    border: solid 1px darkgray;
+    padding: 20px;
+}
+
+th {
+    font-weight: 600px;
+    border-bottom: 1px solid #6678b1;
+    padding: 8px 2px;
+    font-size: 20px;
+}
+
+td {
+    padding: 12px 2px;
+}
+
+span {
+    background-color: #7AB1FF;
+    padding: 8px;
+}
+
+.btn-screen-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-1 {
+    border: solid 1px darkgray;
+    width: 10%;
+    cursor: pointer;
+    height: 45px;
+    text-align: center;
+    padding: 15px;
+    margin-right: 20px;
+}
+
+.btn-2 {
+    border: solid 1px darkgray;
+    width: 20%;
+    cursor: pointer;
+    height: 45px;
+    text-align: center;
+    padding: 15px;
+    background-color: #7AB1FF;
+}
+
+.btn-2:hover {
+    border: solid 1px red;
+}
+
+.screen-3 {
+    display: none;
+}
+
+.input_form {
+    color: red;
+    display: none;
 }

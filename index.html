@@ -86,156 +86,80 @@
     <div id="screen_2">
         <h1>Оформление заказа</h1>
         <div class="detail-pay">
-            <form action="detail" onsubmit="return sendform ();">
-                <h3>ФИО</h3>
-                <input id="input_fio" type="text" placeholder="Иванов Иван Иванович">
-                <h3>Email</h3>
-                <input id="input_email" type="email" placeholder="test@mail.com">
-                <h3>Номер телефона</h3>
-                <input id="input_tel" type="tel" placeholder="+71234567890">
-                <h3>Адрес доставки</h3>
-                <input id="input_adress" type="text" placeholder="г. Сочи, ул. Чехова 20">
-                <div class="btn" id="goto_screen_1">Назад</div>
-                <div class="btn" id="goto_screen_3">Далее</div>
+            <h3>ФИО</h3>
+            <input id="input_fio" type="text" placeholder="Иванов Иван Иванович">
+            <p class="input_form">*Обязательное поле для заполнения</p>
+            <br>
+            <h3>Email</h3>
+            <input id="input_email" type="email" placeholder="test@mail.com">
+            <p class="input_form">*Обязательное поле для заполнения</p>
+            <br>
+            <h3>Номер телефона</h3>
+            <input id="input_tel" type="tel" placeholder="+71234567890">
+            <p class="input_form">*Обязательное поле для заполнения</p>
+            <br>
+            <h3>Адрес доставки</h3>
+            <input id="input_adress" type="text" placeholder="г. Сочи, ул. Чехова 20">
+            <p class="input_form">*Обязательное поле для заполнения</p>
+            <br>
+            <div class="btn" id="goto_screen_1">Назад</div>
+            <div class="btn" id="goto_screen_3">Далее</div>
 
-            </form>
         </div>
     </div>
+
+
+    <div class="screen-3" id="screen_3">
+
+        <h1>Подтверждение заказа</h1>
+
+        <table id="table_product">
+            <tr>
+                <th>Фото</th>
+                <th>Hазвание товара</th>
+                <th>Кол-во</th>
+                <th>Стоимость</th>
+            </tr>
+            
+        </table>
+        
+        <h1>Контактные данные</h1>
+
+        <table>
+            <tr>
+                <td>Контактное лицо</td>
+                <td id="fio"></td>
+
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td id="email"></td>
+
+            </tr>
+            <tr>
+                <td>Телефон для связи</td>
+                <td id="tel"></td>
+
+            </tr>
+            <tr>
+                <td>Адрес доставки</td>
+                <td id="adress"></td>
+
+            </tr>
+
+        </table>
+        <div class="btn-screen-3">
+            <div class="btn-1" id="">Назад</div>
+            <div class="btn-2" id="">Оформить заказ</div>
+        </div>
+    </div>
+
+
+
 </body>
 
 </html>
 
-<script>
-    // $("#btn-test").click(function(e) {
-    //     $("#alert_info").toggle()
-
-    // });
-
-
-
-    let cartObj = {}
-    let userObj = {
-        fio: "",
-        email: "",
-        tel_number: "",
-        adress: ""
-    }
-
-
-    // Add to Cart
-    $(document).on("click", ".add-to-cart", function() {
-        let nowItemName = $(this).parent().children("h4").text()
-        let nowItemPrice = $(this).parent().children("h6").text()
-
-        let nowNum = $(this).parent().children(".configurate-count").children("input").val()
-        nowNum = Number(nowNum)
-
-        // Ошибка при добавлении в корзину 
-        if (nowNum == 0) {
-            // console.log($("#alert_info").children("p").text())
-            $("#alert_info").children("p").text("Укажите минимум один товар для добавления в корзину")
-            $("#alert_info").show()
-
-            let hideInterval = setInterval(() => {
-                $("#alert_info").hide()
-                clearInterval(hideInterval)
-            }, 2000);
-        } else {
-
-
-            nowItemPrice = nowItemPrice.replace(" ₽", "")
-            nowItemPrice = Number(nowItemPrice)
-
-            if (cartObj[nowItemName] == undefined) {
-                cartObj[nowItemName] = {
-                    name: nowItemName,
-                    price: nowItemPrice,
-                    count: nowNum
-                }
-            } else {
-                cartObj[nowItemName]["count"] += 1
-            }
-
-            console.log(cartObj)
-
-            let countNow = 0
-            let sumPriceNow = 0
-
-            $.each(cartObj, function(indexInArray, valueOfElement) {
-                countNow += valueOfElement["count"]
-
-                sumPriceNow += (valueOfElement["count"] * valueOfElement["price"])
-            });
-
-            $("#prev-count").text(countNow)
-            $("#prev-price").text(sumPriceNow)
-        }
-    });
-    // Btn PLUS
-    $(document).on("click", ".btn-plus", function() {
-        let nowNum = $(this).parent().children("input").val()
-        $(this).parent().children("input").val(Number(nowNum) + 1)
-    });
-    // Btn MINUS
-    $(document).on("click", ".btn-minus", function() {
-        let nowNum = $(this).parent().children("input").val()
-        if (Number(nowNum) != 0) {
-            $(this).parent().children("input").val(Number(nowNum) - 1)
-        }
-    });
-
-
-    $(document).on("click", "#goto_screen_2", function() {
-        let countInCart = Object.keys(cartObj).length
-        if (countInCart != 0) {
-            $("#screen_1").hide("slide")
-            $("#screen_2").show("slide")
-        } else {
-            $("#alert_info").children("p").text("Для перехода к оформлению добавьте минимум 1 товар в корзину")
-            $("#alert_info").show()
-
-            let hideInterval = setInterval(() => {
-                $("#alert_info").hide()
-                clearInterval(hideInterval)
-            }, 1000);
-        }
-
-    });
-
-    $(document).on("click", "#goto_screen_1", function() {
-        $("#screen_2").hide("slide")
-        $("#screen_1").show("slide")
-    })
-
-    $(document).on("click", "#goto_screen_3", function() {
-        userObj["fio"] = $("#input_fio").val()
-        userObj["email"] = $("#input_email").val()
-        userObj["tel_number"] = $("#input_tel").val()
-        userObj["adress"] = $("#input_adress").val()
-
-        console.log(userObj)
-    })
-    // массив полей для проверки 
-    required = now ["fio", "email","tel_number", "adress"]
-    // массив с текстом ошибки для конкретного поля
-    required_show= now ["Ваше имя", "Электронная почта","Номер телефона", "Адрес доставки"]
-
-    function sendform() {
-        let i, j
-        
-        for (j = 0; j < required.length; j++) {
-            for (i = 0; i< document.forms[0].length; i++) {
-                if(document.forms[0].elements[i].name ==required[j] && document.forms[0].elements[i].value == "") {
-                    alert('Пожалуйста, введите'+ required_show[j])
-                document.forms[0].elements[i].focus()
-                return false;   
-                }
-            }
-           
-            
-        }
-        return true;
-    }
-
-    
+<script src="script.js">
 </script>

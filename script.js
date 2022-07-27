@@ -110,8 +110,6 @@ $(document).on("click", "#goto_screen_1", function () {
 })
 
 
-
-
 $(document).on("click", "#goto_screen_3", function () {
     // alert("mm")
     userObj["fio"] = $("#input_fio").val()
@@ -142,6 +140,12 @@ $(document).on("click", "#goto_screen_3", function () {
         $("#screen_2").hide("slide")
         $("#screen_3").show("slide")
 
+        // очищаем текущий заказ перед заполнением товарами
+        $("#table_product").html("")
+
+        // обьявляем переменную для итоговой стоимости
+        let totalPrice = 0
+
         // console.log(cartObj)
         $.each(cartObj, function (indexInArray, valueOfElement) {
             // console.log()
@@ -155,9 +159,13 @@ $(document).on("click", "#goto_screen_3", function () {
                 
             </tr>
             `
+            // увеличиваем итоговую стоимость на стоимость позиции
+            totalPraice += valueOfElement["price"] *  valueOfElement["count"]
             $("#table_product").append(htmlBlock)
            
         });
+        // выводим итоговую стоимость в консоль
+        console.log("totalPraice", totalPraice)
     }
 
 
